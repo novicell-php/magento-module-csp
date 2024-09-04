@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!--
+  ~ @copyright Copyright © Novicell ApS. All rights reserved.
+  ~ @license   proprietary
+  ~ @link      https://www.novicell.dk/
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="novicell" translate="label" sortOrder="900">
+            <label>Novicell</label>
+        </tab>
+        <section id="novicell_csp" translate="label" sortOrder="100" showInDefault="1">
+            <tab>novicell</tab>
+            <label>Csp</label>
+            <class>separator-top</class>
+            <resource>Novicell_Csp::general</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>General</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enable Csp Override</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="csp_whitelists" translate="label" type="text" sortOrder="20" showInDefault="1">
+                <label>Csp Whitelists</label>
+                <field id="hosts" translate="label" sortOrder="10" showInDefault="1">
+                    <frontend_model>Novicell\Csp\Block\Adminhtml\Form\Field\Hosts</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

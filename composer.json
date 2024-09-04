@@ -1,0 +1,28 @@
+{
+    "name": "novicell/module-csp",
+    "version": "1.0.1",
+    "description": "Module for Backend Csp",
+    "type": "magento2-module",
+    "homepage": "https://www.novicell.com/dk/teknologier/magento/",
+    "require": {
+        "php": ">=8.2"
+    },
+    "license": "proprietary",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Novicell\\Csp\\": ""
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require-dev": {
+        "magento/magento-coding-standard": "*"
+    }
+}

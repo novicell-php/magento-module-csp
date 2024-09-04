@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+  ~ @copyright Copyright © Novicell ApS. All rights reserved.
+  ~ @license   proprietary
+  ~ @link      https://www.novicell.dk/
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Novicell\Csp\Model\Collector\CspWhitelistXmlCollector">
+        <arguments>
+            <argument name="configReader" xsi:type="object">Magento\Csp\Model\Collector\CspWhitelistXml\Data</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Csp\Model\CompositePolicyCollector">
+        <arguments>
+            <argument name="collectors" xsi:type="array">
+                <item name="whitelist" xsi:type="object" sortOrder="2">Novicell\Csp\Model\Collector\CspWhitelistXmlCollector\Proxy</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
